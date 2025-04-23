@@ -5,8 +5,8 @@ import json
 import webbrowser
 
 
-APP_ID = '633321'
-APP_SECRET = 'ef1aa290ac83ba8da84b0f1d1a9bba46'
+APP_ID = '****'
+APP_SECRET = '****'
 REDIRECT_URI = 'http://localhost/dashboard/'
 TOKEN_FILE = 'dist/deezer_token.txt'
 DATA_FILE = 'dist/deezer_data.json'
@@ -32,6 +32,7 @@ else:
 
 print("Authentification réussie. Token obtenu.")
 print("Tentative de récupération de la playlist 'stream'...")
+
 # Obtenir la playlist "stream"
 def get_stream_playlist(access_token):
     index = 0
@@ -64,10 +65,10 @@ def get_stream_playlist_tracks(playlist_url, access_token):
         response = requests.get(f"{playlist_url}?access_token={access_token}&index={index}&limit=50")
         if response.status_code == 200:
             tracks = response.json()['data']
-            if not tracks:  # Si aucune piste n'est renvoyée, on arrête la boucle
+            if not tracks:  
                 break
             all_tracks.extend(tracks)
-            index += len(tracks)  # Mise à jour de l'index de départ pour la prochaine requête
+            index += len(tracks)  
         else:
             break
     return all_tracks
@@ -98,6 +99,7 @@ print("Vérification de la playlist...")
 if stream_playlist:
     response = requests.get(f"https://api.deezer.com/playlist/{stream_playlist['id']}?access_token={access_token}")
     if response.status_code == 200 and response.json()['nb_tracks'] != len(stream_playlist.get('tracks_data', [])):
+        
         # Mise à jour nécessaire
         print("Mise a jour de la playlist...")
 
