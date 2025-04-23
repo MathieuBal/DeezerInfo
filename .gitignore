@@ -1,0 +1,36 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Environnement virtuel
+venv/
+.venv/
+env/
+ENV/
+
+# PyInstaller / build
+build/
+dist/
+*.spec
+*.exe
+
+# Fichiers de données / tokens (éviter de les committer)
+dist/deezer_token.txt
+dist/deezer_data.json
+dist/infostream.exe
+current_song.txt
+
+# Dépendances
+*.egg-info/
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+
+# Systèmes
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
