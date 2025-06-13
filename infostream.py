@@ -18,6 +18,7 @@ print("Tentative d'authentification...")
 
 # Obtenir le token d'accès
 if not os.path.exists(TOKEN_FILE):
+    os.makedirs('dist', exist_ok=True)
     AUTH_URL = f"https://connect.deezer.com/oauth/auth.php?app_id={APP_ID}&redirect_uri={REDIRECT_URI}&perms=basic_access,offline_access,listening_history"
     webbrowser.open(AUTH_URL)
     code = input("Entrez le code obtenu après l'authentification: ")
@@ -105,7 +106,8 @@ if stream_playlist:
 
         tracks = get_stream_playlist_tracks(stream_playlist['tracklist'], access_token)
         stream_playlist['tracks_data'] = tracks
-
+        
+        os.makedirs('dist', exist_ok=True)
         with open(DATA_FILE, 'w') as json_file:
             json.dump(stream_playlist, json_file)
 
@@ -116,7 +118,8 @@ else:
     stream_playlist = get_stream_playlist(access_token)
     tracks = get_stream_playlist_tracks(stream_playlist['tracklist'], access_token)
     stream_playlist['tracks_data'] = tracks
-
+    
+    os.makedirs('dist', exist_ok=True)
     with open(DATA_FILE, 'w') as json_file:
         json.dump(stream_playlist, json_file)
     print("Les données ont été écrites avec succès dans le fichier JSON.")
