@@ -49,7 +49,7 @@ python infostream.py
 
 1. À la première exécution, le script ouvrira ton navigateur pour autoriser l'accès via OAuth Deezer.
 2. Saisis le code reçu dans la console.  
-3. Le script stockera le token dans le fichier dist/deezer_token.txt et les données de la playlist dans le fichier dist/deezer_data.json.  
+3. Le script crée automatiquement le dossier `dist/` puis stocke le token dans `dist/deezer_token.txt` et les données de la playlist dans `dist/deezer_data.json`.
 4. Le fichier `current_song.txt` sera mis à jour toutes les 5 secondes avec les informations du morceau en cours.
 
 
@@ -65,7 +65,6 @@ MIT
 
 ## Améliorations futures
 
-- Créer automatiquement le dossier dist/ s'il n'existe pas.  
-- Gérer les erreurs réseau et les tokens expirés.  
-- Ajouter une interface graphique ou une bannière défilante en temps réel.  
+- Gérer les erreurs réseau et les tokens expirés.
+- Ajouter une interface graphique ou une bannière défilante en temps réel. 
 - Emballer en exécutable cross-platform (PyInstaller).
