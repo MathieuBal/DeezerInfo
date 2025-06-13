@@ -40,7 +40,7 @@ pip install -r requirements.txt
 ## Utilisation
 
 ```bash
-python main.py
+python infostream.py
 ```
 
 1. À la première exécution, le script ouvrira ton navigateur pour autoriser l'accès via OAuth Deezer.
