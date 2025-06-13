@@ -33,6 +33,10 @@ source .venv/bin/activate
 
 # 3. Installer les dépendances
 pip install -r requirements.txt
+
+# 4. Définir les variables d'environnement pour l'API Deezer
+export APP_ID=<votre_app_id>
+export APP_SECRET=<votre_app_secret>
 ```
 
 > **Note :** `webbrowser`, `time`, `json` et `os` sont inclus dans la stdlib Python.
