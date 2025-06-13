@@ -5,8 +5,8 @@ import json
 import webbrowser
 
 
-APP_ID = '****'
-APP_SECRET = '****'
+APP_ID = os.getenv('APP_ID', '****')
+APP_SECRET = os.getenv('APP_SECRET', '****')
 REDIRECT_URI = 'http://localhost/dashboard/'
 TOKEN_FILE = 'dist/deezer_token.txt'
 DATA_FILE = 'dist/deezer_data.json'
